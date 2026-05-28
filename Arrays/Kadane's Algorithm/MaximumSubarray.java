@@ -20,4 +20,20 @@ Leetocde - 53
 }
 
 Optimal : 
-  
+  class Solution {
+    public int maxSubArray(int[] nums) {
+        int sum = 0;
+        int maxSum = Integer.MIN_VALUE;
+
+        for (int ele : nums) {
+            if (sum < 0) {
+                sum = 0;
+            }
+
+            sum += ele;
+            maxSum = Math.max(sum, maxSum);
+        }
+
+        return maxSum;
+    }
+}
